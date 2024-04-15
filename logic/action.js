@@ -46,6 +46,10 @@ let maxHealth = 200;
 
 
 
+
+
+
+
 function attack(){
   enemyHP = enemyHP - playerAP;
   console.log("attack");
