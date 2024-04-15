@@ -1,10 +1,10 @@
 const dropDown = document.querySelector(".form-select");
 
 
-function save(){
-let saveData = JSON.stringify(taskList);
-        localStorage.setItem("character", saveData);
-    }
+// function save(){
+// let saveData = JSON.stringify(taskList);
+//         localStorage.setItem("character", saveData);
+//     }
 
 //   let string = localStorage.getItem("character");
 //         let taskList = JSON.parse(string) || [];
@@ -26,7 +26,7 @@ function raceSelector() {
 
 raceSelector();
 
-function startGame(){
-    .startbutton.addEventListener("click", save())
-}
+// function startGame(){
+//     .startbutton.addEventListener("click", save())
+// }
 
