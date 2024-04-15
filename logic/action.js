@@ -110,7 +110,7 @@ function nextLevel(){
 }
 
 function gameOver(){
-  window.open("gameOver.html");
+  window.location.href = 'gameOver.html';
 }
 
 
