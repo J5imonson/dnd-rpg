@@ -3,29 +3,37 @@ const userAttack = $("#attack");
 const userHeal = $("#heal");
 const userFlee = $("#flee");
 
-/*
-Somewhere in here we will create and add our array of our enemy objects
-*/
-
-/*
-The following variables are very much placeholders for POC. Feel free to iterate upon as needed!
-*/
-
-function getEnemy(){
-  fetch('https://www.dnd5eapi.co/api/') // dropdown to select race
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-})
+const goblin = {
+  attack: 4,
+  health: 40,
+  xp: 10,
+}
+const ogre = {
+  attack: 6,
+  health: 60,
+  xp: 15,
+}
+const cyclops = {
+  attack: 10,
+  health: 100,
+  xp: 25,
+}
+const basilisk = {
+  attack: 4,
+  health: 40,
+  xp: 50,
+}
+const gary = {
+  attack: 25,
+  health: 500,
+  xp: 100,
 }
 
-let creatureHealth = 0;
-/*
-we will need to create a global 'for' loop for iterating through our enemies. 
--or-
-we can create a variable for iterating through the array and increase that variable in the nextLevel function
-*/
+const enemyList = [goblin, ogre, cyclops, basilisk, gary];
 
+
+
+let creatureHealth = 0;
 let playerHP = 100;
 let enemyHP = 100; //will replace with creatureHealth
 let playerAP = 10;
