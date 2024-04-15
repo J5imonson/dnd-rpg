@@ -11,7 +11,13 @@ Somewhere in here we will create and add our array of our enemy objects
 The following variables are very much placeholders for POC. Feel free to iterate upon as needed!
 */
 
-
+function getEnemy(){
+  fetch('https://www.dnd5eapi.co/api/') // dropdown to select race
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+})
+}
 
 let creatureHealth = 0;
 /*
@@ -28,13 +34,18 @@ let playerHeal = 25;
 let playerFlee = false;
 let isGameOver = false;
 let isNextLevel = false;
+let maxHealth = 200;
 
 
 
 function attack(){
-  enemyHP = enemyHP - playerAP;
+  playerHP = playerHP - playerAP;
   console.log("attack");
-  console.log("Enemy Health: " + enemyHP);
+  console.log("Enemy Health: " + playerHP);
+
+  if(playerHP <= 0){
+    gameOver();
+  }
   /*
   --WILL UNCOMMENT WHEN nextLevel FUNCTION IS WRITTEN--
   if(enemyHealth <= 0){
@@ -44,12 +55,8 @@ function attack(){
 }
 
 function heal(){
-  playerHP = playerHP + playerHeal;
   console.log("heal");
   console.log("Player Health: " + playerHP);
-
-  /*
-  --IF WE WANT TO SET A MAX HEALTH VALUE: UNCOMMENT AND DELETE LINE 36--
 
   function healPlayer(){
     playerHP = playerHP + playerHeal;
@@ -60,13 +67,11 @@ function heal(){
   }
 
   if(playerHP < maxHealth){
-    run healPlayer()
-  }els{
-    alert("Youe are already at max health")
+    healPlayer()
+  }else{
+    alert("You're already at max health")
   }
 
-
-  */
 }
 
 function flee(){
@@ -82,12 +87,10 @@ function flee(){
 function enemyAttack(){
   playerHP = playerHP - enemyAP;
 
-  /*
-  --WILL UNCOMMENT WHEN endGame FUNCTION IS WRITTEN--
-  if(playerHealth <= 0){
-    endGame();
+  if(playerHP <= 0){
+    gameOver();
   }
-  */
+  
 }
 
 
@@ -101,9 +104,7 @@ function nextLevel(){
 }
 
 function gameOver(){
-  /*
-    -run gameOver html and script
-  */
+  window.open("gameOver.html");
 }
 
 
@@ -122,5 +123,6 @@ userFlee.on("click", function(e){
   flee();
 });
 
+getEnemy();
 
 
