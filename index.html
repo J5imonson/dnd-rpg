@@ -13,15 +13,28 @@
 
 
 <body>
-
-  <h1>Game Title</h1>
-
-  <div>
-    <h2>Welcome: Choose your player to begin</h2>
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <h2>Welcome: Choose your player to begin</h2>
+    </div>
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Character Name</label>
     <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Frodo Baggins">
+  </div>
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Select Race</option>
+  </select>
+  <button class="startButton">
+    <p>Begin</p>
+  </button>
+
+  <div class="row justify-content-center">
+    <div class="col-1">
+      <button class="startButton">
+        <p>Begin</p>
+      </button>
+    </div>
   </div>
   <select class="form-select" aria-label="Default select example">
     <option selected>Select Race</option>
