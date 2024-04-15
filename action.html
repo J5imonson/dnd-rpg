@@ -51,14 +51,17 @@
 
   <div class="action-input">
     <button onmousedown="sound4.play()"id="btn">Attack</button>
-    <button id="heal">Heal</button>
-    <button id="flee">Flee</button>
+    <button onmousedown="sound3.play()"id="btn">Heal</button>
+    <button onmousedown="sound2.play()"id="btn">Flee</button>
 
     <script>
       var sound4 = new Audio();
     sound4.src = "assets/attack.mp3"
+    var sound3 = new Audio();
+    sound3.src = "assets/heal.mp3"
+    var sound2 = new Audio();
+    sound2.src = "assets/flee.mp3"
 
-    
     </script>
     
    
