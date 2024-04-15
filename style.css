@@ -40,6 +40,11 @@
   width: 90%;
 }
 
+option {
+  background-color: #CD1818 ;
+  color: #321E1E;
+}
+
  .startButton {
    display: flex;
    background-color: #CD1818;
@@ -62,4 +67,11 @@
  footer {
    border-top: 2px solid #321E1E;
    padding: 20px;
+ }
+
+
+ #attack, #heal, #flee {
+  background-color: #CD1818;
+  border-radius: 10px;
+  margin: 15px;
  }
