@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <audio id="song">
+  <!--<audio id="song">
     <source src="backgroundmusic.mp3">
   </audio>
 
@@ -23,7 +23,7 @@
       document.getElementById("song").play();
     });
   </script>
-
+-->
   <header>
     <div class="row justify-content-center">
       <div class="col-2">
@@ -50,10 +50,21 @@
   </div>
 
   <div class="action-input">
-    <button id="attack">Attack</button>
+    <button onmousedown="sound4.play()"id="btn">Attack</button>
     <button id="heal">Heal</button>
     <button id="flee">Flee</button>
+
+    <script>
+      var sound4 = new Audio();
+    sound4.src = "assets/attack.mp3"
+
+    
+    </script>
+    
+   
   </div>
+
+  
 
   <footer>
     <div class="row justify-content-center">
