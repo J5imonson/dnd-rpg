@@ -32,7 +32,7 @@ const gary = {
 const enemyList = [goblin, ogre, cyclops, basilisk, gary];
 
 
-
+let enemyIndex = 0;
 let creatureHealth = 0;
 let playerHP = 100;
 let enemyHP = 100; //will replace with creatureHealth
@@ -102,11 +102,11 @@ function enemyAttack(){
 
 
 function nextLevel(){
-  /*
-    -set all variables back to their base value
-    -itterate on the array of enemies to load in next enemies stats and image
-    -increase array variable if needed
-  */
+  
+   // -set all variables back to their base value
+   enemyIndex++;
+   enemyAP = enemyList[enemyIndex].attack;
+   enemyHP = enemyList[enemyIndex].health;
 }
 
 function gameOver(){
@@ -129,6 +129,6 @@ userFlee.on("click", function(e){
   flee();
 });
 
-getEnemy();
+console.log(enemyList[enemyIndex].attack);
 
 
