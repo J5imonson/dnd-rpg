@@ -17,7 +17,21 @@
 
 
 <body>
+
+  <audio id="song">
+    <source src="backgroundmusic.mp3">
+  </audio>
+
+  <script>
+    window.addEventListener('click', () => {
+      document.getElementById("song").play();
+    });
+  </script>
+
   <header>
+        <h1>Game Title</h1>
+  </header>
+
       <h2>Welcome: Choose your player to begin</h2>
   </header>
   <section class="character">
@@ -25,6 +39,7 @@
       <label for="exampleFormControlInput1" class="form-label">Character Name</label>
       <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Frodo Baggins">
     </div>
+    
     <select class="form-select player-race" aria-label="Default select example">
       <option  selected>Select Race</option>
     </select>
@@ -33,12 +48,13 @@
     </button>
 </section>
 
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 </body>
 
 <footer>
   <p>Freddy and the Console.logs</p>
 </footer>
-
 
 <script src="./logic/script.js"></script>
 
