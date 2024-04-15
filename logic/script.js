@@ -26,9 +26,13 @@ function save() {
     
     let saveData = JSON.stringify({ race , characterName });
     localStorage.setItem("character", saveData);
+    window.location.href = 'action.html';
 }
 
 
-startButton.on("click", save);
+startButton.on("click", save); {
+
+    
+}
 
 
