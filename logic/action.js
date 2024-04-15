@@ -46,6 +46,16 @@ let maxHealth = 200;
 
 
 
+let string = localStorage.getItem("character");
+let savedCharacter = JSON.parse(string) || [];
+
+
+const playerInfo = {
+  name: savedCharacter.characterName, 
+  race: savedCharacter.race
+};
+
+
 
 
 
@@ -133,6 +143,6 @@ userFlee.on("click", function(e){
   flee();
 });
 
-getEnemy();
+// getEnemy();
 
 
