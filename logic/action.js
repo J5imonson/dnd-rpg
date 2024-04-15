@@ -39,9 +39,9 @@ let maxHealth = 200;
 
 
 function attack(){
-  playerHP = playerHP - playerAP;
+  enemyHP = enemyHP - playerAP;
   console.log("attack");
-  console.log("Enemy Health: " + playerHP);
+  console.log("Enemy Health: " + enemyHP);
 
   if(playerHP <= 0){
     gameOver();
@@ -77,9 +77,8 @@ function heal(){
 function flee(){
   playerFlee = true;
   if(playerFlee){
-    //what do we want to happen when the player flees?
-    //run gameOver?
     playerFlee = false;
+    gameOver();
   }
   console.log(playerFlee);
 }
@@ -89,8 +88,7 @@ function enemyAttack(){
 
   if(playerHP <= 0){
     gameOver();
-  }
-  
+  } 
 }
 
 
