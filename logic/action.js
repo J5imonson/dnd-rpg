@@ -34,6 +34,7 @@ let isNextLevel = false;
 function attack(){
   enemyHP = enemyHP - playerAP;
   console.log("attack");
+  console.log("Enemy Health: " + enemyHP);
   /*
   --WILL UNCOMMENT WHEN nextLevel FUNCTION IS WRITTEN--
   if(enemyHealth <= 0){
@@ -45,6 +46,7 @@ function attack(){
 function heal(){
   playerHP = playerHP + playerHeal;
   console.log("heal");
+  console.log("Player Health: " + playerHP);
 
   /*
   --IF WE WANT TO SET A MAX HEALTH VALUE: UNCOMMENT AND DELETE LINE 36--
