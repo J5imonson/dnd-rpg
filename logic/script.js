@@ -1,13 +1,7 @@
-const dropDown = document.querySelector(".form-select");
+const dropDown = $(".form-select");
+const startButton = $(".startButton")
 
 
-// function save(){
-// let saveData = JSON.stringify(taskList);
-//         localStorage.setItem("character", saveData);
-//     }
-
-//   let string = localStorage.getItem("character");
-//         let taskList = JSON.parse(string) || [];
 
 
 
@@ -17,23 +11,24 @@ function raceSelector() {
         .then(data => {
             console.log(data)
             for (let i = 0; i<data.results.length; i++) {
-                const optionTag = document.createElement("option")
-                optionTag.textContent = data.results[i].name
-                dropDown.appendChild(optionTag)  
+                const optionTag = $("<option>")
+                optionTag.text(data.results[i].name)
+                dropDown.append(optionTag);
             }
         });
 }
 
 raceSelector();
 
-
-
-function startGame(){
-    document.startButton.addEventListener("click", save());
-        function save() {
-            let saveData = JSON.stringify(".form-select, .form-control");
-            localStorage.setItem("character", saveData);
-            console.log()
-        }
+function save() {
+    const race = dropDown.find(":selected").text()
+    const characterName = $(".form-control").val()
+    
+    let saveData = JSON.stringify({ race , characterName });
+    localStorage.setItem("character", saveData);
 }
+
+
+startButton.on("click", save);
+
 
