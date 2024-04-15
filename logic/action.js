@@ -3,23 +3,37 @@ const userAttack = $("#attack");
 const userHeal = $("#heal");
 const userFlee = $("#flee");
 
-/*
-Somewhere in here we will create and add our array of our enemy objects
-*/
+const goblin = {
+  attack: 4,
+  health: 40,
+  xp: 10,
+}
+const ogre = {
+  attack: 6,
+  health: 60,
+  xp: 15,
+}
+const cyclops = {
+  attack: 10,
+  health: 100,
+  xp: 25,
+}
+const basilisk = {
+  attack: 4,
+  health: 40,
+  xp: 50,
+}
+const gary = {
+  attack: 25,
+  health: 500,
+  xp: 100,
+}
 
-/*
-The following variables are very much placeholders for POC. Feel free to iterate upon as needed!
-*/
+const enemyList = [goblin, ogre, cyclops, basilisk, gary];
 
 
 
 let creatureHealth = 0;
-/*
-we will need to create a global 'for' loop for iterating through our enemies. 
--or-
-we can create a variable for iterating through the array and increase that variable in the nextLevel function
-*/
-
 let playerHP = 100;
 let enemyHP = 100; //will replace with creatureHealth
 let playerAP = 10;
@@ -28,6 +42,7 @@ let playerHeal = 25;
 let playerFlee = false;
 let isGameOver = false;
 let isNextLevel = false;
+let maxHealth = 200;
 
 
 
@@ -35,6 +50,10 @@ function attack(){
   enemyHP = enemyHP - playerAP;
   console.log("attack");
   console.log("Enemy Health: " + enemyHP);
+
+  if(playerHP <= 0){
+    gameOver();
+  }
   /*
   --WILL UNCOMMENT WHEN nextLevel FUNCTION IS WRITTEN--
   if(enemyHealth <= 0){
@@ -44,12 +63,8 @@ function attack(){
 }
 
 function heal(){
-  playerHP = playerHP + playerHeal;
   console.log("heal");
   console.log("Player Health: " + playerHP);
-
-  /*
-  --IF WE WANT TO SET A MAX HEALTH VALUE: UNCOMMENT AND DELETE LINE 36--
 
   function healPlayer(){
     playerHP = playerHP + playerHeal;
@@ -60,21 +75,18 @@ function heal(){
   }
 
   if(playerHP < maxHealth){
-    run healPlayer()
-  }els{
-    alert("Youe are already at max health")
+    healPlayer()
+  }else{
+    alert("You're already at max health")
   }
 
-
-  */
 }
 
 function flee(){
   playerFlee = true;
   if(playerFlee){
-    //what do we want to happen when the player flees?
-    //run gameOver?
     playerFlee = false;
+    gameOver();
   }
   console.log(playerFlee);
 }
@@ -82,12 +94,9 @@ function flee(){
 function enemyAttack(){
   playerHP = playerHP - enemyAP;
 
-  /*
-  --WILL UNCOMMENT WHEN endGame FUNCTION IS WRITTEN--
-  if(playerHealth <= 0){
-    endGame();
-  }
-  */
+  if(playerHP <= 0){
+    gameOver();
+  } 
 }
 
 
@@ -101,9 +110,7 @@ function nextLevel(){
 }
 
 function gameOver(){
-  /*
-    -run gameOver html and script
-  */
+  window.open("gameOver.html");
 }
 
 
@@ -122,5 +129,6 @@ userFlee.on("click", function(e){
   flee();
 });
 
+getEnemy();
 
 
