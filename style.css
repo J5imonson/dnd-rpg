@@ -9,8 +9,13 @@
    font-family: "Macondo", cursive;
    background-color: #116D6E;
    color: #321E1E;
+   text-align: center
  }
 
+ body {
+  background-color:#116D6E;
+ }
+ 
  h1, h2 {
    padding: 15px;
  }
@@ -19,9 +24,26 @@
    border-bottom: 2px solid #321E1E;
  }
 
- .btn {
-   background-color: #4E3636;
- }
+.character {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.player-name, .player-race {
+  margin: 10px;
+  padding: 5px;
+}
+
+.form-select {
+  width: 90%;
+}
+
+option {
+  background-color: #CD1818 ;
+  color: #321E1E;
+}
 
  .startButton {
    display: flex;
@@ -30,6 +52,8 @@
    padding-top: 15px;
    padding-left: 20px;
    padding-right: 20px;
+   justify-content: center;
+   margin: 15px;
  }
 
  p {
@@ -42,4 +66,12 @@
 
  footer {
    border-top: 2px solid #321E1E;
+   padding: 20px;
+ }
+
+
+ #attack, #heal, #flee {
+  background-color: #CD1818;
+  border-radius: 10px;
+  margin: 15px;
  }
