@@ -9,6 +9,7 @@
    font-family: "Macondo", cursive;
    background-color: #116D6E;
    color: #321E1E;
+   text-align: center
  }
 
  h1, h2 {
@@ -19,9 +20,12 @@
    border-bottom: 2px solid #321E1E;
  }
 
- .btn {
-   background-color: #4E3636;
- }
+.character {
+  display: inline-flex;
+  justify-content: center;
+  background-color:#116D6E;
+  flex-direction: column;
+}
 
  .startButton {
    display: flex;
