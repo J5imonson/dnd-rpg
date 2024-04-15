@@ -61,8 +61,8 @@ function heal(){
 
   if(playerHP < maxHealth){
     run healPlayer()
-  }else{
-    alert("You are already at max health")
+  }els{
+    alert("Youe are already at max health")
   }
 
 
