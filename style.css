@@ -12,6 +12,10 @@
    text-align: center
  }
 
+ body {
+  background-color:#116D6E;
+ }
+ 
  h1, h2 {
    padding: 15px;
  }
@@ -23,8 +27,17 @@
 .character {
   display: inline-flex;
   justify-content: center;
-  background-color:#116D6E;
   flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.player-name, .player-race {
+  margin: 10px;
+  padding: 5px;
+}
+
+.form-select {
+  width: 90%;
 }
 
  .startButton {
@@ -34,6 +47,8 @@
    padding-top: 15px;
    padding-left: 20px;
    padding-right: 20px;
+   justify-content: center;
+   margin: 15px;
  }
 
  p {
@@ -46,4 +61,5 @@
 
  footer {
    border-top: 2px solid #321E1E;
+   padding: 20px;
  }
