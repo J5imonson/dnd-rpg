@@ -4,40 +4,44 @@ const userHeal = $("#heal");
 const userFlee = $("#flee");
 
 const goblin = {
+  name: "goblin",
   attack: 4,
   health: 40,
   xp: 10,
 }
 const ogre = {
+  name: "ogre",
   attack: 6,
   health: 60,
   xp: 15,
 }
 const cyclops = {
+  name: "cyclops",
   attack: 10,
   health: 100,
   xp: 25,
 }
 const basilisk = {
+  name: "basilisk",
   attack: 4,
   health: 40,
   xp: 50,
 }
 const gary = {
-  attack: 25,
+  name: "gary",
+  attack: 24,
   health: 500,
   xp: 100,
 }
 
 const enemyList = [goblin, ogre, cyclops, basilisk, gary];
 
-
-
-let creatureHealth = 0;
+let enemyIndex = 0;
 let playerHP = 100;
-let enemyHP = 100; //will replace with creatureHealth
 let playerAP = 10;
-let enemyAP = 10;
+let enemyHP = enemyList[0].health;
+let enemyAP = enemyList[0].attack;
+let enemyName = enemyList[0].name;
 let playerHeal = 25;
 let playerFlee = false;
 let isGameOver = false;
@@ -46,20 +50,19 @@ let maxHealth = 200;
 
 
 
+
+
 function attack(){
   enemyHP = enemyHP - playerAP;
   console.log("attack");
   console.log("Enemy Health: " + enemyHP);
 
-  if(playerHP <= 0){
-    gameOver();
-  }
-  /*
-  --WILL UNCOMMENT WHEN nextLevel FUNCTION IS WRITTEN--
-  if(enemyHealth <= 0){
+  if(enemyHP <= 0){
     nextLevel();
   }
-  */
+
+  enemyAttack();
+  
 }
 
 function heal(){
@@ -80,6 +83,8 @@ function heal(){
     alert("You're already at max health")
   }
 
+  enemyAttack();
+
 }
 
 function flee(){
@@ -99,19 +104,22 @@ function enemyAttack(){
   } 
 }
 
-
-
 function nextLevel(){
-  /*
-    -set all variables back to their base value
-    -itterate on the array of enemies to load in next enemies stats and image
-    -increase array variable if needed
-  */
+   playerHP = 100;
+
+   enemyIndex++;
+   enemyAP = enemyList[enemyIndex].attack;
+   enemyHP = enemyList[enemyIndex].health;
+   enemyName = enemyList[enemyIndex].name;
+
+   //text[enemyIndex].object
 }
 
 function gameOver(){
   window.open("gameOver.html");
 }
+
+
 
 
 userAttack.on("click", function(e){
@@ -129,6 +137,5 @@ userFlee.on("click", function(e){
   flee();
 });
 
-getEnemy();
 
 
