@@ -18,6 +18,16 @@
 
 
 <body>
+  <audio id="song">
+    <source src="backgroundmusic.mp3">
+  </audio>
+
+  <script>
+    window.addEventListener('click', () => {
+      document.getElementById("song").play();
+    });
+  </script>
+
   <header>
     <div class="row justify-content-center">
       <div class="col-2">
