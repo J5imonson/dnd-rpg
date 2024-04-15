@@ -11,7 +11,15 @@ Somewhere in here we will create and add our array of our enemy objects
 The following variables are very much placeholders for POC. Feel free to iterate upon as needed!
 */
 
-//let creatureHealth = array[0].Health? this is assuming we create an array of objects with each creature having its own HP
+
+
+let creatureHealth = 0;
+/*
+we will need to create a global 'for' loop for iterating through our enemies. 
+-or-
+we can create a variable for iterating through the array and increase that variable in the nextLevel function
+*/
+
 let playerHP = 100;
 let enemyHP = 100; //will replace with creatureHealth
 let playerAP = 10;
@@ -41,8 +49,9 @@ function heal(){
   /*
   --IF WE WANT TO SET A MAX HEALTH VALUE: UNCOMMENT AND DELETE LINE 36--
 
-   function healPlayer(){
-  playerHP = playerHP + playerHeal;
+  function healPlayer(){
+    playerHP = playerHP + playerHeal;
+
     if(playerHP > maxHealth){
       playerHP = maxHealth;
     }
@@ -63,6 +72,7 @@ function flee(){
   if(playerFlee){
     //what do we want to happen when the player flees?
     //run gameOver?
+    playerFlee = false;
   }
   console.log(playerFlee);
 }
@@ -84,6 +94,7 @@ function nextLevel(){
   /*
     -set all variables back to their base value
     -itterate on the array of enemies to load in next enemies stats and image
+    -increase array variable if needed
   */
 }
 
