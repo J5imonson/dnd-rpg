@@ -26,7 +26,14 @@ function raceSelector() {
 
 raceSelector();
 
-// function startGame(){
-//     .startbutton.addEventListener("click", save())
-// }
+
+
+function startGame(){
+    document.startButton.addEventListener("click", save());
+        function save() {
+            let saveData = JSON.stringify(".form-select, .form-control");
+            localStorage.setItem("character", saveData);
+            console.log()
+        }
+}
 
