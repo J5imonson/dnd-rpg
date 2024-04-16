@@ -72,6 +72,7 @@ let isGameOver = false;
 let isNextLevel = false;
 let maxHealth = 200;
 let maxHeals = 4;
+let test = false;
 
 let string = localStorage.getItem("character");
 let savedCharacter = JSON.parse(string) || [];
@@ -87,6 +88,11 @@ function attack() {
   enemyHP = enemyHP - playerAP;
   console.log("attack");
   console.log("Enemy Health: " + enemyHP);
+
+    enemyImage.addClass('animate__wobble');
+    enemyImage.addClass('animate__animated');
+
+  
   if (enemyHP <= 0) {
     nextLevel();
   }
@@ -129,7 +135,9 @@ function flee() {
 function enemyAttack() {
   playerHP = playerHP - enemyAP;
   console.log(playerHP);
+  test = false;
   refreshInfo();
+  
 
   if (playerHP <= 0) {
     gameOver();
@@ -188,6 +196,8 @@ populateInfo();
 
 userAttack.on("click", function (e) {
   e.preventDefault();
+  enemyImage.removeClass('animate__wobble');
+  enemyImage.removeClass('animate__animated');
   attack();
 });
 
@@ -201,5 +211,7 @@ userFlee.on("click", function (e) {
   flee();
 });
 
-
-
+// userAttack.on("click", function(e){
+//   e.preventDefault();
+//   enemyImage.animate(wobble);
+// })
