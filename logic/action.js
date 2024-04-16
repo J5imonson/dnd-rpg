@@ -3,6 +3,13 @@ const userAttack = $("#attack");
 const userHeal = $("#heal");
 const userFlee = $("#flee");
 
+const userIDname = $("#userID");
+const userIDhealth = $("#userHealth");
+const userIDclass = $("#userClass");
+const enemyIDname = $("#enemyID");
+const enemyIDhealth = $("#enemyHealth");
+
+
 const goblin = {
   name: "goblin",
   attack: 4,
@@ -47,6 +54,7 @@ let playerFlee = false;
 let isGameOver = false;
 let isNextLevel = false;
 let maxHealth = 200;
+let maxHeals = 4;
 
 let string = localStorage.getItem("character");
 let savedCharacter = JSON.parse(string) || [];
@@ -80,9 +88,12 @@ function heal() {
     }
   }
 
-  if (playerHP < maxHealth) {
+  if (playerHP < maxHealth && maxHeals > 0) {
     healPlayer()
-  } else {
+    maxHeals--;
+  }else if(maxHeals == 0){
+    alert("You have no more heals")
+  }else{
     alert("You're already at max health")
   }
   enemyAttack();
@@ -101,6 +112,7 @@ function flee() {
 function enemyAttack() {
   playerHP = playerHP - enemyAP;
   console.log(playerHP);
+  refreshInfo();
 
   if (playerHP <= 0) {
     gameOver();
@@ -110,6 +122,7 @@ function enemyAttack() {
 
 function nextLevel() {
   playerHP = 100;
+  maxHeals = maxHeals + 2;
 
   enemyIndex++;
   enemyAP = enemyList[enemyIndex].attack;
@@ -126,12 +139,32 @@ function nextLevel() {
   const randomPrompt = textPrompts[Math.floor(Math.random() * textPrompts.length)];
   alert (randomPrompt);
 
+  populateInfo();
+
   //text[enemyIndex].object
 }
 
 function gameOver() {
   window.location.href = 'gameOver.html';
 }
+
+function populateInfo(){
+  userIDname.text(playerInfo.name);
+  userIDhealth.text(playerHP);
+  userIDclass.text(playerInfo.race);
+  enemyIDname.text(enemyList[enemyIndex].name);
+  enemyIDhealth.text(enemyHP);
+}
+
+function refreshInfo(){
+  userIDhealth.text(playerHP);
+  enemyIDhealth.text(enemyHP);
+}
+
+
+populateInfo();
+
+
 
 userAttack.on("click", function (e) {
   e.preventDefault();
@@ -147,9 +180,6 @@ userFlee.on("click", function (e) {
   e.preventDefault();
   flee();
 });
-
-
-// getEnemy();
 
 
 
