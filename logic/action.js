@@ -8,6 +8,7 @@ const userIDhealth = $("#userHealth");
 const userIDrace = $("#userRace");
 const enemyIDname = $("#enemyID");
 const enemyIDhealth = $("#enemyHealth");
+const userIDheals = $("#maxHeals");
 
 
 const goblin = {
@@ -154,11 +155,13 @@ function populateInfo(){
   userIDrace.text(playerInfo.race);
   enemyIDname.text(enemyList[enemyIndex].name);
   enemyIDhealth.text(enemyHP);
+  userIDheals.text(maxHeals);
 }
 
 function refreshInfo(){
   userIDhealth.text(playerHP);
   enemyIDhealth.text(enemyHP);
+  userIDheals.text(maxHeals);
 }
 
 
