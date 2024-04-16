@@ -66,6 +66,7 @@ const playerInfo = {
 
 
 
+
 function attack(){
   enemyHP = enemyHP - playerAP;
   console.log("attack");
