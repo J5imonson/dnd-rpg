@@ -5,7 +5,7 @@ const userFlee = $("#flee");
 
 const userIDname = $("#userID");
 const userIDhealth = $("#userHealth");
-const userIDclass = $("#userClass");
+const userIDrace = $("#userRace");
 const enemyIDname = $("#enemyID");
 const enemyIDhealth = $("#enemyHealth");
 
@@ -151,7 +151,7 @@ function gameOver() {
 function populateInfo(){
   userIDname.text(playerInfo.name);
   userIDhealth.text(playerHP);
-  userIDclass.text(playerInfo.race);
+  userIDrace.text(playerInfo.race);
   enemyIDname.text(enemyList[enemyIndex].name);
   enemyIDhealth.text(enemyHP);
 }
