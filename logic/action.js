@@ -10,38 +10,54 @@ const enemyIDname = $("#enemyID");
 const enemyIDhealth = $("#enemyHealth");
 const userIDheals = $("#maxHeals");
 
+const enemyImage = $('#monsterImage');
+
+// const goblinImage = new Image(100,100);
+// goblinImage.src = "./assets/images/goblin.jpg";
+// enemyImage.prepend('<img id = "ogre" src="./assets/images/ogre.jpeg" />');
+// $(document).ready(function(){
+//   $("img").click(function(){
+//       // Change src attribute of image
+//       $(this).attr("src", "images/card-front.jpg");
+//   });    
+// });
+
 
 const goblin = {
   name: "goblin",
   attack: 4,
   health: 40,
   xp: 10,
+  image: "./assets/images/goblin.jpg",
 }
 const ogre = {
   name: "ogre",
   attack: 6,
   health: 60,
   xp: 15,
+  image: "./assets/images/ogre.jpeg",
 }
 const cyclops = {
   name: "cyclops",
   attack: 10,
   health: 100,
   xp: 25,
+  image: "./assets/images/cyclops.png",
 }
 const basilisk = {
   name: "basilisk",
   attack: 4,
   health: 40,
   xp: 50,
+  image: "./assets/images/basilisk.jpeg",
 }
 const gary = {
   name: "gary",
   attack: 24,
   health: 500,
   xp: 100,
+  image: "./assets/images/garyFace.jpg",
 }
-
 const enemyList = [goblin, ogre, cyclops, basilisk, gary];
 
 let enemyIndex = 0;
@@ -139,7 +155,7 @@ function nextLevel() {
 
   const randomPrompt = textPrompts[Math.floor(Math.random() * textPrompts.length)];
   alert (randomPrompt);
-
+  // enemyImage.attr("src", enemyList[enemyIndex].image);
   populateInfo();
 
   //text[enemyIndex].object
@@ -156,6 +172,7 @@ function populateInfo(){
   enemyIDname.text("enemy: " + enemyList[enemyIndex].name);
   enemyIDhealth.text("enemy health: " + enemyHP);
   userIDheals.text("heals: " + maxHeals);
+  enemyImage.attr("src", enemyList[enemyIndex].image);
 }
 
 function refreshInfo(){
