@@ -150,18 +150,18 @@ function gameOver() {
 }
 
 function populateInfo(){
-  userIDname.text(playerInfo.name);
-  userIDhealth.text(playerHP);
-  userIDrace.text(playerInfo.race);
-  enemyIDname.text(enemyList[enemyIndex].name);
-  enemyIDhealth.text(enemyHP);
-  userIDheals.text(maxHeals);
+  userIDname.text("name: " + playerInfo.name);
+  userIDhealth.text("health: " + playerHP);
+  userIDrace.text("race: " + playerInfo.race);
+  enemyIDname.text("enemy: " + enemyList[enemyIndex].name);
+  enemyIDhealth.text("enemy health: " + enemyHP);
+  userIDheals.text("heals: " + maxHeals);
 }
 
 function refreshInfo(){
-  userIDhealth.text(playerHP);
-  enemyIDhealth.text(enemyHP);
-  userIDheals.text(maxHeals);
+  userIDhealth.text("health: " + playerHP);
+  enemyIDhealth.text("enemy health: " + enemyHP);
+  userIDheals.text("heals: " + maxHeals);
 }
 
 
