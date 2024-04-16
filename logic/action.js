@@ -89,15 +89,13 @@ function attack() {
   console.log("attack");
   console.log("Enemy Health: " + enemyHP);
 
-    enemyImage.addClass('animate__wobble');
-    enemyImage.addClass('animate__animated');
-
-  
+  enemyImage.addClass('animate__animated');
+  enemyImage.addClass('animate__wobble');
   if (enemyHP <= 0) {
     nextLevel();
   }
-  enemyAttack();
 }
+
 
 function heal() {
   console.log("heal");
@@ -215,3 +213,12 @@ userFlee.on("click", function (e) {
 //   e.preventDefault();
 //   enemyImage.animate(wobble);
 // })
+
+enemyImage.on('animationend', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  enemyImage.removeClass('animate__wobble');
+  enemyImage.removeClass('animate__animated');
+
+  enemyAttack();
+});
