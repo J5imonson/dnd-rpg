@@ -22,11 +22,11 @@
     <source src="backgroundmusic.mp3">
   </audio>
 
-  <!-- <script>
+  <script>
     window.addEventListener('click', () => {
       document.getElementById("song").play();
     });
-  </script> -->
+  </script>
 
   <header>
         <h1>Game Title</h1>
@@ -37,10 +37,10 @@
   <section class="character">
     <div class="mb-3 player-name">
       <label for="exampleFormControlInput1" class="form-label">Character Name</label>
-      <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Frodo Baggins">
+      <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Frodo Baggins" required>
     </div>
     
-    <select class="form-select player-race" aria-label="Default select example">
+    <select class="form-select player-race" aria-label="Default select example" required>
       <option  selected>Select Race</option>
     </select>
     <button class="startButton">

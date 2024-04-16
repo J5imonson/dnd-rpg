@@ -58,17 +58,7 @@ const playerInfo = {
 
 alert ("You awake alone in a forest, with only your weapon by your side...");
 
-<<<<<<< HEAD
-
-
-
-
-
-
-function attack(){
-=======
 function attack() {
->>>>>>> main
   enemyHP = enemyHP - playerAP;
   console.log("attack");
   console.log("Enemy Health: " + enemyHP);
