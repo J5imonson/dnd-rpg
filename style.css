@@ -76,3 +76,23 @@ option {
   margin: 15px;
  }
 
+#monsterImage {
+  width: 30vw;
+  animation-fill-mode: none;
+}
+
+.animate__hinge {
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: hinge; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+.animate__wobble{
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: wobble; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
