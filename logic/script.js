@@ -1,9 +1,7 @@
 const dropDown = $(".form-select");
 const startButton = $(".startButton")
 
-
-
-
+$("#song")[0].volume = 0.2;
 
 function raceSelector() {
     fetch('https://www.dnd5eapi.co/api/races') // dropdown to select race
@@ -35,6 +33,9 @@ function save() {
     localStorage.setItem("character", saveData);
 }
 
+window.addEventListener('click', () => {
+    document.getElementById("song").play();
+});
 
 startButton.on("click", save);
 
