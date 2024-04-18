@@ -11,10 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>Action</title>
 </head>
 
@@ -30,17 +27,17 @@
   </script>
 
   <header>
-        <h1> Fight! </h1>
+    <h1> Fight! </h1>
   </header>
 
   <div>
-    <img id = "monsterImage"  src="" alt="monster">
+    <img id="monsterImage" src="" alt="monster">
   </div>
 
-      <menu>
-        <div class="player"></div>
-      </menu>
-   
+  <menu>
+    <div class="player"></div>
+  </menu>
+
   <div class="user-information">
     <div class="row justify-content-center">
       <div class="col-2">
@@ -65,35 +62,35 @@
       <div class="col-2">
         <p id="maxHeals">Max Heals</p>
       </div>
-      </div>
+    </div>
   </div>
 
   <div class="action-input">
-    <button onmousedown="sound4.play()"id="attack">Attack</button>
-    <button onmousedown="sound3.play()"id="heal">Heal</button>
-    <button onmousedown="sound2.play()"id="flee">Flee</button>
+    <button onmousedown="sound4.play()" id="attack">Attack</button>
+    <button onmousedown="sound3.play()" id="heal">Heal</button>
+    <button onmousedown="sound2.play()" id="flee">Flee</button>
 
     <script>
       var sound4 = new Audio();
-    sound4.src = "assets/attack.mp3"
-    var sound3 = new Audio();
-    sound3.src = "assets/heal.mp3"
-    var sound2 = new Audio();
-    sound2.src = "assets/flee.mp3"
+      sound4.src = "assets/attack.mp3"
+      var sound3 = new Audio();
+      sound3.src = "assets/heal.mp3"
+      var sound2 = new Audio();
+      sound2.src = "assets/flee.mp3"
 
     </script>
-    
-   
+
+
   </div>
 
-  
+
 
   <footer>
-        <p>Created by Freddy and the Console.logs</p>
+    <p>Created by Freddy and the Console.logs</p>
   </footer>
 
   <script src="logic/action.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </body>
 
 </html>

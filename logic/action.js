@@ -12,17 +12,6 @@ const userIDheals = $("#maxHeals");
 
 const enemyImage = $('#monsterImage');
 
-// const goblinImage = new Image(100,100);
-// goblinImage.src = "./assets/images/goblin.jpg";
-// enemyImage.prepend('<img id = "ogre" src="./assets/images/ogre.jpeg" />');
-// $(document).ready(function(){
-//   $("img").click(function(){
-//       // Change src attribute of image
-//       $(this).attr("src", "images/card-front.jpg");
-//   });    
-// });
-
-
 const goblin = {
   name: "goblin",
   attack: 4,
@@ -82,7 +71,7 @@ const playerInfo = {
   race: savedCharacter.race
 };
 
-alert ("You awake alone in a forest, with only your weapon by your side...");
+alert("You awake alone in a forest, with only your weapon by your side...");
 
 function attack() {
   enemyHP = enemyHP - playerAP;
@@ -112,9 +101,9 @@ function heal() {
   if (playerHP < maxHealth && maxHeals > 0) {
     healPlayer()
     maxHeals--;
-  }else if(maxHeals == 0){
+  } else if (maxHeals == 0) {
     alert("You have no more heals")
-  }else{
+  } else {
     alert("You're already at max health")
   }
   enemyAttack();
@@ -127,7 +116,7 @@ function flee() {
     gameOver();
   }
   console.log(playerFlee);
-  alert ("Cowards have no place in a game like this!🐔");
+  alert("Cowards have no place in a game like this!🐔");
 }
 
 function enemyAttack() {
@@ -135,11 +124,11 @@ function enemyAttack() {
   console.log(playerHP);
   test = false;
   refreshInfo();
-  
+
 
   if (playerHP <= 0) {
     gameOver();
-    alert ("The enemy has defeated you.")
+    alert("The enemy has defeated you.")
   }
 }
 
@@ -160,18 +149,16 @@ function nextLevel() {
     "What did I just step in? Ew! It's on my boots! EEEWWW!"]
 
   const randomPrompt = textPrompts[Math.floor(Math.random() * textPrompts.length)];
-  alert (randomPrompt);
-  // enemyImage.attr("src", enemyList[enemyIndex].image);
+  alert(randomPrompt);
   populateInfo();
 
-  //text[enemyIndex].object
 }
 
 function gameOver() {
   window.location.href = 'gameOver.html';
 }
 
-function populateInfo(){
+function populateInfo() {
   userIDname.text("name: " + playerInfo.name);
   userIDhealth.text("health: " + playerHP);
   userIDrace.text("race: " + playerInfo.race);
@@ -181,7 +168,7 @@ function populateInfo(){
   enemyImage.attr("src", enemyList[enemyIndex].image);
 }
 
-function refreshInfo(){
+function refreshInfo() {
   userIDhealth.text("health: " + playerHP);
   enemyIDhealth.text("enemy health: " + enemyHP);
   userIDheals.text("heals: " + maxHeals);
@@ -208,11 +195,6 @@ userFlee.on("click", function (e) {
   e.preventDefault();
   flee();
 });
-
-// userAttack.on("click", function(e){
-//   e.preventDefault();
-//   enemyImage.animate(wobble);
-// })
 
 enemyImage.on('animationend', (event) => {
   event.stopPropagation();
