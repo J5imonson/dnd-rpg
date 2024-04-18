@@ -1,28 +1,29 @@
 .macondo-regular {
-   font-family: "Macondo", cursive;
-   font-weight: 400;
-   font-style: normal;
- }
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
- * {
-   margin: 0, auto;
-   font-family: "Macondo", cursive;
-   background-color: #116D6E;
-   color: #321E1E;
-   text-align: center
- }
+* {
+  margin: 0, auto;
+  font-family: "Macondo", cursive;
+  background-color: #116D6E;
+  color: #321E1E;
+  text-align: center
+}
 
- body {
-  background-color:#116D6E;
- }
- 
- h1, h2 {
-   padding: 15px;
- }
+body {
+  background-color: #116D6E;
+}
 
- header {
-   border-bottom: 2px solid #321E1E;
- }
+h1,
+h2 {
+  padding: 15px;
+}
+
+header {
+  border-bottom: 2px solid #321E1E;
+}
 
 .character {
   display: inline-flex;
@@ -31,7 +32,8 @@
   margin-bottom: 15px;
 }
 
-.player-name, .player-race {
+.player-name,
+.player-race {
   margin: 10px;
   padding: 5px;
 }
@@ -41,40 +43,42 @@
 }
 
 option {
-  background-color: #CD1818 ;
+  background-color: #CD1818;
   color: #321E1E;
 }
 
- .startButton {
-   display: flex;
-   background-color: #CD1818;
-   border-radius: 10px;
-   padding-top: 15px;
-   padding-left: 20px;
-   padding-right: 20px;
-   justify-content: center;
-   margin: 15px;
- }
+.startButton {
+  display: flex;
+  background-color: #CD1818;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+  margin: 15px;
+}
 
- p {
-   background-color: transparent;
- }
+p {
+  background-color: transparent;
+}
 
- div {
-   padding: 5px;
- }
+div {
+  padding: 5px;
+}
 
- footer {
-   border-top: 2px solid #321E1E;
-   padding: 20px;
- }
+footer {
+  border-top: 2px solid #321E1E;
+  padding: 20px;
+}
 
 
- #attack, #heal, #flee {
+#attack,
+#heal,
+#flee {
   background-color: #CD1818;
   border-radius: 10px;
   margin: 15px;
- }
+}
 
 #monsterImage {
   width: 30vw;
@@ -85,14 +89,18 @@ option {
   display: inline-block;
   margin: 0 0.5rem;
 
-  animation: hinge; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 2s; /* don't forget to set a duration! */
+  animation: hinge;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+  /* don't forget to set a duration! */
 }
 
-.animate__wobble{
+.animate__wobble {
   display: inline-block;
   margin: 0 0.5rem;
 
-  animation: wobble; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 2s; /* don't forget to set a duration! */
+  animation: wobble;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+  /* don't forget to set a duration! */
 }
